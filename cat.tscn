@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmho5kg1ow5r4"]
+
+[ext_resource type="PackedScene" uid="uid://s1cu861cyj3l" path="res://Great Assets/Cat.glb" id="1_erfe1"]
+[ext_resource type="Script" path="res://cat.gd" id="1_nj1ac"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5rsac"]
+radius = 1.70986
+height = 3.47072
+
+[node name="Cat" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279341, 0.321627, -0.35282)
+collision_mask = 2
+script = ExtResource("1_nj1ac")
+
+[node name="Cat" parent="." instance=ExtResource("1_erfe1")]
+transform = Transform3D(0.331219, 0, 0, 0, 0.331219, 0, 0, 0, 0.331219, -0.288228, 2.98023e-08, 0.361067)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.285381, 0, 0, 0, 0.285381, 0, 0, 0, 0.285381, -0.301572, 0, 0.510394)
+shape = SubResource("CapsuleShape3D_5rsac")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

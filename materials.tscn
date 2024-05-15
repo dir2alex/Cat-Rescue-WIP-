@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1sqlaj3l2u5v"]
+
+[ext_resource type="PackedScene" uid="uid://c5wej2xgjarj" path="res://block.glb" id="1_ytlrs"]
+[ext_resource type="PackedScene" uid="uid://bmewr3e0dn71h" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/campfire.glb" id="2_n1d0f"]
+[ext_resource type="PackedScene" uid="uid://2lv3lwkrjfn4" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/grass.glb" id="3_ttgtd"]
+[ext_resource type="PackedScene" uid="uid://bpefq51seky2l" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/rockFlat.glb" id="4_0xxx3"]
+[ext_resource type="PackedScene" uid="uid://dg5cl8nqk41as" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/signpostSingle.glb" id="5_np6pp"]
+[ext_resource type="PackedScene" uid="uid://c58y8utvxmgl" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/tree.glb" id="6_4qs6s"]
+[ext_resource type="PackedScene" uid="uid://ctr82bvxsayua" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/treeFall.glb" id="7_266jm"]
+[ext_resource type="PackedScene" uid="uid://dushsiymhgtib" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/workbench.glb" id="8_wi6wq"]
+
+[node name="Materials" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.506247)
+
+[node name="block" parent="." instance=ExtResource("1_ytlrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130633, -7.15256e-07, 0.563888)
+
+[node name="campfire" parent="." instance=ExtResource("2_n1d0f")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 2.78276, 0.0227323, 1.43284)
+
+[node name="grass" parent="." instance=ExtResource("3_ttgtd")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 3.96816, -0.180982, -0.683772)
+
+[node name="rockFlat" parent="." instance=ExtResource("4_0xxx3")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 1.70937, 0.022732, 5.7163)
+
+[node name="signpostSingle" parent="." instance=ExtResource("5_np6pp")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 0.860105, 0.0227323, -2.21388)
+
+[node name="tree" parent="." instance=ExtResource("6_4qs6s")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, -1.6669, 0.0227323, 1.62846)
+
+[node name="treeFall" parent="." instance=ExtResource("7_266jm")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, -2.71779, 0.0227323, -1.12774)
+
+[node name="workbench" parent="." instance=ExtResource("8_wi6wq")]
+transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 3.21677, 0.0227323, -3.02997)
