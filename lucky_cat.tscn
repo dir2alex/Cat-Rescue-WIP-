@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjoksaw83oowi"]
+
+[ext_resource type="PackedScene" uid="uid://dtf2y2bmkduq0" path="res://t_lc_d.tscn" id="1_uadll"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0wkni"]
+
+[node name="LC" type="Node3D"]
+
+[node name="lucky cat TEST IF NOT WORK DELETE" parent="." instance=ExtResource("1_uadll")]
+transform = Transform3D(0.414731, 0, 0, 0, 0.414731, 0, 0, 0, 0.414731, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_0wkni")

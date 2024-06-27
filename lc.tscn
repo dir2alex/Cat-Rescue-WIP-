@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb5xdxw24yr8s"]
+
+[ext_resource type="Script" path="res://normalcat.gd" id="1_rgfoq"]
+[ext_resource type="PackedScene" uid="uid://dv4ik8jya6dt0" path="res://Great Assets/normalcat.glb" id="3_7d2iq"]
+[ext_resource type="AudioStream" uid="uid://b7igpinp4cna2" path="res://file folder/Meow Sound Effect.mp3" id="3_lbu6l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rhv68"]
+
+[node name="normalcat" type="Node3D"]
+script = ExtResource("1_rgfoq")
+
+[node name="meow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lbu6l")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.338033, 0, 0, 0, 0.338033, 0, 0, 0, 0.338033, 0, 0.00820427, 0.00575653)
+shape = SubResource("CapsuleShape3D_rhv68")
+
+[node name="normalcat" parent="." instance=ExtResource("3_7d2iq")]
+transform = Transform3D(0.0956677, 0, 0, 0, 0.0956677, 0, 0, 0, 0.0956677, 0, 0, 0)

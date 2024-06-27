@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tystc1a406w0"]
+
+[ext_resource type="PackedScene" uid="uid://cg8cxpum8lv4d" path="res://Great Assets/store.glb" id="1_m7gwr"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0yx6v"]
+points = PackedVector3Array(-0.487068, 0.000255252, -0.426154, 0.608783, 0.853799, -0.0976511, 0.585461, 0.837038, -0.1666, -0.592214, 0.853799, -0.0976511, 0.501028, 0.0024789, 0.37906, -0.459162, 0.835729, 0.391236, -0.459162, 0.00877127, 0.391236, 0.503937, 0, -0.408044, -0.48185, 0.8398, -0.421806, 0.49842, 0.8398, 0.376983, 0.49842, 0.8398, -0.40365, -0.592214, -0.0092988, -0.0976511, 0.608783, -0.0092988, -0.0976511, 0.402857, 0.834789, -0.416983, 0.402857, 0.00971154, -0.416983, -0.579274, 1.11022e-16, -0.169276, -0.572734, 0.8398, -0.16754, 0.11662, 0.837803, -0.419933, -0.314233, 0.834335, 0.389872, 0.514978, 0.838452, -0.366194, -0.314233, 0.0101651, 0.389872)
+
+[node name="store2" instance=ExtResource("1_m7gwr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="store" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="store/StaticBody3D" index="0"]
+transform = Transform3D(1, -1.42109e-14, 0, 0, 1, 6.77626e-21, 0, -3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_0yx6v")

@@ -13,9 +13,11 @@ func _process(delta):
 
 func _on_play_pressed():
 	print("entering game")
-	get_tree().change_scene_to_file("res://tutorial.tscn")
+	get_tree().change_scene_to_file("res://main_world.tscn")
 
 
 func _on_quit_pressed():
 	print("bye bye!")
 	get_tree().quit()
+
+

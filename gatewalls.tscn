@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ue47wupw1yr"]
+
+[ext_resource type="PackedScene" uid="uid://oyovdvto4b8q" path="res://Great Assets/gatewalls.gltf" id="1_013ur"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hm2l"]
+size = Vector3(2.06982, 1, 2.002)
+
+[node name="gatewalls" instance=ExtResource("1_013ur")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539551, 0, 0.00504301)
+shape = SubResource("BoxShape3D_2hm2l")

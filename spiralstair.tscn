@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0u4sehll21rt"]
+
+[ext_resource type="PackedScene" uid="uid://bolrbu20imhbk" path="res://Great Assets/spiral staircase.glb" id="1_cyd6i"]
+
+[node name="spiral staircase" instance=ExtResource("1_cyd6i")]
+
+[node name="Cylinder" parent="." index="0"]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Circle_001" index="0"]
+transform = Transform3D(-0.866497, 0.392236, -0.308758, -0.465078, -0.859041, 0.213892, -0.181339, 0.328934, 0.926776, 2.76949, 1.61972, -2.3254)
+size = Vector3(8.15033, 1, 6.44751)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Circle_001" index="1"]
+transform = Transform3D(-0.604997, -0.300848, -0.737201, -0.267978, -0.794921, 0.544322, -0.749775, 0.526867, 0.400304, 3.07785, 6.62278, 3.06191)
+use_collision = true
+size = Vector3(8.15033, 1, 6.44751)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Circle_001" index="2"]
+transform = Transform3D(-0.24733, -0.434007, -0.86629, 0.0439178, -0.898172, 0.437441, -0.967933, 0.0701455, 0.241207, -1.35776, 11.85, 3.49276)
+use_collision = true
+size = Vector3(8.15033, 1, 7.81506)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Circle_001" index="3"]
+transform = Transform3D(0.0196886, 0.420851, -0.906913, 0.462322, -0.808117, -0.364966, -0.886491, -0.412102, -0.210478, -2.68389, 18.3792, -2.76944)
+use_collision = true
+size = Vector3(8.15033, 1, 7.81506)

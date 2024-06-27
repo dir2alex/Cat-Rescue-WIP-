@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsoquhjyqa6bg"]
+
+[ext_resource type="PackedScene" uid="uid://dt3ec6pxboeko" path="res://Great Assets/tower thing.glb" id="1_6p000"]
+
+[node name="tower thing" instance=ExtResource("1_6p000")]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Circle" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331722, 0)
+use_collision = true
+radius = 0.978031
+height = 0.654359
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Plane_001" index="0"]
+transform = Transform3D(0.83192, 0.550351, -0.0708707, -0.552204, 0.833669, -0.00817623, 0.0545829, 0.0459371, 0.997452, 2.77009, -2.45555, -1.27007)
+visible = false
+use_collision = true
+size = Vector3(7.12976, 1, 4.45433)

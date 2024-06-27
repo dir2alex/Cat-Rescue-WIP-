@@ -1,0 +1,305 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnvl1n2u8m6ia"]
+
+[ext_resource type="Script" path="res://dialogue.gd" id="1_v10xj"]
+[ext_resource type="Texture2D" uid="uid://co3fy38xhowff" path="res://the one who safeguards cats.png" id="2_qunwv"]
+[ext_resource type="Texture2D" uid="uid://dobgpxphl3gvh" path="res://dialogbox.png" id="3_53gry"]
+[ext_resource type="FontFile" uid="uid://i4rjiy8d8wa7" path="res://Starborn.ttf" id="4_psfg5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jug40"]
+
+[sub_resource type="Animation" id="Animation_qbk3o"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../1:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../3:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../4:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../5:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2qqew"]
+resource_name = "tutorial_scene"
+length = 26.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 14, 16, 24.8, 26.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../1:visible_ratio")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2.5, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../2:visible_ratio")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6.1, 7, 8.9, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../3:visible_ratio")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(10, 11, 12.9, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../4:visible_ratio")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(18, 18.5, 19, 19.5, 20.1, 20.4, 20.6, 20.8, 21.9, 22),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.35, 0.517, 0.64, 0.804, 0.85, 0.922, 1.0, 1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../5:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(24, 24.5, 24.9, 25.3, 25.7, 26.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.22, 0.292, 0.455, 0.815, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_dfyu6"]
+resource_name = "typewriter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtykd"]
+_data = {
+"RESET": SubResource("Animation_qbk3o"),
+"tutorial_scene": SubResource("Animation_2qqew"),
+"typewriter": SubResource("Animation_dfyu6")
+}
+
+[node name="DIALOG" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_v10xj")
+
+[node name="TheOneWhoGuardsCats" type="Sprite2D" parent="."]
+position = Vector2(543, 297)
+scale = Vector2(0.193865, 0.193865)
+texture = ExtResource("2_qunwv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -537.0
+offset_top = -203.0
+offset_right = 537.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_53gry")
+
+[node name="1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 487.0
+offset_right = 1099.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_psfg5")
+theme_override_font_sizes/normal_font_size = 22
+text = "greetings. i am the mysterious cat keeper. 
+i go by many names..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 487.0
+offset_right = 1099.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_psfg5")
+theme_override_font_sizes/normal_font_size = 22
+text = "but that is not why you are here.."
+
+[node name="3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 487.0
+offset_right = 1099.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_psfg5")
+theme_override_font_sizes/normal_font_size = 22
+text = "i have lost six of my beloved cats. 
+and i know you have the skill to find my cats... so i beg of thee."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="4" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -75.0
+offset_right = 230.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_psfg5")
+theme_override_font_sizes/normal_font_size = 64
+text = "   please..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="5" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -75.0
+offset_right = 230.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_psfg5")
+theme_override_font_sizes/normal_font_size = 64
+text = "find them"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 63.0
+scale = Vector2(14.4031, 10.3643)
+texture = SubResource("CanvasTexture_jug40")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TextureRect2")
+libraries = {
+"": SubResource("AnimationLibrary_rtykd")
+}

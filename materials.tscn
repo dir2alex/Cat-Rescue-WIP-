@@ -1,37 +1,64 @@
 [gd_scene load_steps=9 format=3 uid="uid://d1sqlaj3l2u5v"]
 
-[ext_resource type="PackedScene" uid="uid://c5wej2xgjarj" path="res://block.glb" id="1_ytlrs"]
-[ext_resource type="PackedScene" uid="uid://bmewr3e0dn71h" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/campfire.glb" id="2_n1d0f"]
-[ext_resource type="PackedScene" uid="uid://2lv3lwkrjfn4" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/grass.glb" id="3_ttgtd"]
-[ext_resource type="PackedScene" uid="uid://bpefq51seky2l" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/rockFlat.glb" id="4_0xxx3"]
-[ext_resource type="PackedScene" uid="uid://dg5cl8nqk41as" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/signpostSingle.glb" id="5_np6pp"]
-[ext_resource type="PackedScene" uid="uid://c58y8utvxmgl" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/tree.glb" id="6_4qs6s"]
-[ext_resource type="PackedScene" uid="uid://ctr82bvxsayua" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/treeFall.glb" id="7_266jm"]
-[ext_resource type="PackedScene" uid="uid://dushsiymhgtib" path="res://addons/inventory-system-demos/assets/survival-kit-1.1/Models/GLTF format/workbench.glb" id="8_wi6wq"]
+[ext_resource type="PackedScene" uid="uid://cmglaqnwk02tn" path="res://Great Assets/Habibty.glb" id="1_uuqhb"]
+[ext_resource type="PackedScene" uid="uid://hkb6lyw5cycg" path="res://Great Assets/Grass.glb" id="2_5xyhk"]
+[ext_resource type="PackedScene" uid="uid://cag1yw34egsal" path="res://Great Assets/Rock.glb" id="5_u88vg"]
+[ext_resource type="PackedScene" uid="uid://m4wpetswu1xy" path="res://Great Assets/Tree.glb" id="6_li8u0"]
+[ext_resource type="PackedScene" uid="uid://1ygxrgs5n6i" path="res://Great Assets/Pillar1.glb" id="6_m85v6"]
+[ext_resource type="PackedScene" uid="uid://my8hexu5d441" path="res://Great Assets/Pillar2.glb" id="7_xc7u7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hsrem"]
+height = 2.75618
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xf6ww"]
+size = Vector3(3, 0.506348, 2.30225)
 
 [node name="Materials" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.506247)
 
-[node name="block" parent="." instance=ExtResource("1_ytlrs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130633, -7.15256e-07, 0.563888)
+[node name="Habibty" parent="." instance=ExtResource("1_uuqhb")]
+transform = Transform3D(0.313372, 0, 0, 0, 0.313372, 0, 0, 0, 0.313372, -0.220824, 0, -0.374103)
 
-[node name="campfire" parent="." instance=ExtResource("2_n1d0f")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 2.78276, 0.0227323, 1.43284)
+[node name="StaticBody3D" type="StaticBody3D" parent="Habibty"]
 
-[node name="grass" parent="." instance=ExtResource("3_ttgtd")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 3.96816, -0.180982, -0.683772)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Habibty/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_hsrem")
 
-[node name="rockFlat" parent="." instance=ExtResource("4_0xxx3")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 1.70937, 0.022732, 5.7163)
+[node name="Grass" parent="." instance=ExtResource("2_5xyhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26588, 0, 2.87471)
 
-[node name="signpostSingle" parent="." instance=ExtResource("5_np6pp")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 0.860105, 0.0227323, -2.21388)
+[node name="Rock" parent="." instance=ExtResource("5_u88vg")]
+transform = Transform3D(2.30863, 0, 0, 0, 2.30863, 0, 0, 0, 2.30863, 0.215201, 0, 2.76)
 
-[node name="tree" parent="." instance=ExtResource("6_4qs6s")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, -1.6669, 0.0227323, 1.62846)
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock"]
 
-[node name="treeFall" parent="." instance=ExtResource("7_266jm")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, -2.71779, 0.0227323, -1.12774)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282593, 0, 0)
+shape = SubResource("BoxShape3D_xf6ww")
 
-[node name="workbench" parent="." instance=ExtResource("8_wi6wq")]
-transform = Transform3D(4.56878, 0, 0, 0, 4.56878, 0, 0, 0, 4.56878, 3.21677, 0.0227323, -3.02997)
+[node name="Tree" parent="." instance=ExtResource("6_li8u0")]
+transform = Transform3D(0.386292, 0, 0, 0, 0.386292, 0, 0, 0, 0.386292, 0.451218, 0, 1.28494)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree/StaticBody3D"]
+transform = Transform3D(6.92294, 0, 0, 0, 6.92294, 0, 0, 0, 6.92294, 0, 5.46188, 0)
+shape = SubResource("CapsuleShape3D_hsrem")
+
+[node name="Pillar1" parent="." instance=ExtResource("6_m85v6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58039, 0, 2.33772)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar1/StaticBody3D"]
+transform = Transform3D(1.94522, 0, 0, 0, 1.94522, 0, 0, 0, 1.94522, 0, 2.65667, -0.0157528)
+shape = SubResource("CapsuleShape3D_hsrem")
+
+[node name="Pillar2" parent="." instance=ExtResource("7_xc7u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65831, 0, 2.64314)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar2/StaticBody3D"]
+transform = Transform3D(1.94522, 0, 0, 0, 1.94522, 0, 0, 0, 1.94522, 0, 2.65667, -0.0157528)
+shape = SubResource("CapsuleShape3D_hsrem")

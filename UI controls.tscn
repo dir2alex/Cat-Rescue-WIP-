@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxmmp3rpoojup"]
+
+[ext_resource type="FontFile" uid="uid://i4rjiy8d8wa7" path="res://Starborn.ttf" id="1_sdaty"]
+
+[node name="UI" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 515.0
+offset_bottom = 146.0
+theme_override_colors/font_outline_color = Color(0.476841, 0.644696, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_sdaty")
+theme_override_font_sizes/font_size = 34
+text = "Controls:
+- WASD
+- shift to run"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 805.0
+offset_top = 596.0
+offset_right = 1149.0
+offset_bottom = 649.0
+theme_override_colors/font_outline_color = Color(0.476841, 0.644696, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_sdaty")
+theme_override_font_sizes/font_size = 24
+text = "There are six cats!"

@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3 uid="uid://7k5sut3eft30"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_k31ru"]
+[ext_resource type="FontFile" uid="uid://i4rjiy8d8wa7" path="res://Starborn.ttf" id="1_q6ibt"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k31ru")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(840, 540)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 179.0
+offset_bottom = 92.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -11.5
+offset_right = 30.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q6ibt")
+theme_override_font_sizes/font_size = 35
+text = "settings"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.164931
+anchor_top = 0.154321
+anchor_right = 0.309028
+anchor_bottom = 0.216049
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q6ibt")
+theme_override_font_sizes/font_size = 35
+text = "visual"
+metadata/_edit_use_anchors_ = true
+
+[node name="Full screen" type="CheckBox" parent="Label2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 54.0
+offset_right = 39.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("1_q6ibt")
+text = "fullscreen"
+
+[node name="windowed" type="CheckBox" parent="Label2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 83.0
+offset_right = 120.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("1_q6ibt")
+text = "windowed"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.164931
+anchor_top = 0.344136
+anchor_right = 0.309028
+anchor_bottom = 0.405864
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q6ibt")
+theme_override_font_sizes/font_size = 35
+text = "audio"
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="Label3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 49.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.164931
+anchor_top = 0.492284
+anchor_right = 0.386285
+anchor_bottom = 0.554012
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q6ibt")
+theme_override_font_sizes/font_size = 35
+text = "keybinding"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Label4"]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 8.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("1_q6ibt")
+theme_override_font_sizes/font_size = 28
+text = "configure keybinds"
+
+[connection signal="toggled" from="Label2/Full screen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Label2/windowed" to="." method="_on_windowed_toggled"]
+[connection signal="drag_ended" from="Label3/HSlider" to="." method="_on_h_slider_drag_ended"]

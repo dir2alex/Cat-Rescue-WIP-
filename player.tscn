@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_8ql7l"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4a67"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rfnb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jobn4"]
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_8ql7l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_g4a67")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3rfnb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jobn4")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

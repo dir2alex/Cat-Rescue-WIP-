@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://bl3hsxoyoapf1"]
+
+[ext_resource type="Script" path="res://dialogue-old.gd" id="1_q8ljl"]
+[ext_resource type="Texture2D" uid="uid://co3fy38xhowff" path="res://the one who safeguards cats.png" id="2_2hq05"]
+[ext_resource type="Texture2D" uid="uid://dobgpxphl3gvh" path="res://dialogbox.png" id="2_i73qf"]
+[ext_resource type="Texture2D" uid="uid://dsqhk1uqd7dn7" path="res://iconindicator.png" id="4_atesu"]
+
+[sub_resource type="Animation" id="Animation_6qdwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(198, 251)]
+}
+
+[sub_resource type="Animation" id="Animation_pfyie"]
+resource_name = "tween2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(198, 685), Vector2(199, 292)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bot40"]
+_data = {
+"RESET": SubResource("Animation_6qdwj"),
+"tween2": SubResource("Animation_pfyie")
+}
+
+[sub_resource type="Animation" id="Animation_iak8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1049, 596)]
+}
+
+[sub_resource type="Animation" id="Animation_cbkku"]
+resource_name = "tween1"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1049, 596), Vector2(1049, 625.76)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1iuka"]
+_data = {
+"RESET": SubResource("Animation_iak8d"),
+"tween1": SubResource("Animation_cbkku")
+}
+
+[node name="DIALOG" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_q8ljl")
+
+[node name="TheOneWhoGuardsCats" type="Sprite2D" parent="."]
+position = Vector2(198, 251)
+scale = Vector2(0.142667, 0.142667)
+texture = ExtResource("2_2hq05")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TheOneWhoGuardsCats"]
+libraries = {
+"": SubResource("AnimationLibrary_bot40")
+}
+autoplay = "tween2"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -537.0
+offset_top = -203.0
+offset_right = 537.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_i73qf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 487.0
+offset_right = 1099.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "this is a text
+this is another text"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="clearly unusable" type="Sprite2D" parent="."]
+position = Vector2(1049, 596)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("4_atesu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="clearly unusable"]
+libraries = {
+"": SubResource("AnimationLibrary_1iuka")
+}
+autoplay = "tween1"
+
+[connection signal="animation_finished" from="clearly unusable/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

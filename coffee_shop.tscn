@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://1wbny4l1vmic"]
+
+[ext_resource type="PackedScene" uid="uid://m5t4s4d5ut21" path="res://Great Assets/coffee shop.glb" id="1_204wa"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vv1hx"]
+points = PackedVector3Array(-1.71794, -0.701674, 0.650487, -1.00518, -0.484569, 1.20072, -1.08376, -5.55112e-17, 0.353776, -0.998199, -0.705715, 0.45771, -1.73012, -0.00097419, 1.18886, -1.72219, -0.705924, 1.22261, -1.60964, -5.55112e-17, 0.367296, -1.61316, -0.7064, 0.361239, -1.00276, -5.55112e-17, 1.1899, -1.00518, -0.698988, 1.20072, -1.00276, 0, 0.461767, -1.32514, -0.713304, 0.339025, -1.71758, -5.55112e-17, 0.650623, -1.32514, 0.0119841, 0.339025, -1.08313, -0.702101, 0.352814, -1.42085, 0, 1.21702, -1.40796, -0.7064, 1.22328, -1.71758, 5.55112e-17, 1.21694, -1.72614, -0.696521, 0.772148, -1.73012, -0.700345, 1.18886, -1.72614, -0.00479863, 0.772148)
+
+[node name="coffee shop2" instance=ExtResource("1_204wa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coffee shop" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coffee shop/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -6.35275e-22, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_vv1hx")

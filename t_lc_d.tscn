@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtf2y2bmkduq0"]
+
+[ext_resource type="PackedScene" uid="uid://ykti8cj1jj44" path="res://Great Assets/lucky cat TEST IF NOT WORK DELETE.gltf" id="1_8g20t"]
+
+[node name="lucky cat TEST IF NOT WORK DELETE" instance=ExtResource("1_8g20t")]

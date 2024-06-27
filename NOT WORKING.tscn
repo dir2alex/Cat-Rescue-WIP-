@@ -1,0 +1,269 @@
+[gd_scene load_steps=29 format=3 uid="uid://b47f6hx3jyjnx"]
+
+[ext_resource type="Script" path="res://level1.gd" id="1_f34tk"]
+[ext_resource type="Material" uid="uid://ba1vq8oib6x85" path="res://addons/inventory-system-demos/fps/materials/wall_material.tres" id="2_wq8ii"]
+[ext_resource type="Texture2D" uid="uid://op4yxa4tf5ju" path="res://skybox_afternoon.png" id="3_ia027"]
+[ext_resource type="Texture2D" uid="uid://dobgpxphl3gvh" path="res://dialogbox.png" id="4_jhyb7"]
+[ext_resource type="FontFile" uid="uid://i4rjiy8d8wa7" path="res://Starborn.ttf" id="5_cggf8"]
+[ext_resource type="PackedScene" uid="uid://ba5xlb2bttt86" path="res://well.tscn" id="6_pjsjt"]
+[ext_resource type="PackedScene" uid="uid://c2nob1wxb5pwk" path="res://trunks.tscn" id="7_saidm"]
+[ext_resource type="PackedScene" uid="uid://bfxgbhkqlgssk" path="res://lamppost.tscn" id="8_eem14"]
+[ext_resource type="PackedScene" uid="uid://wsmreeusbji2" path="res://minihouse.tscn" id="9_oq4ta"]
+[ext_resource type="PackedScene" uid="uid://vm5u04547t7e" path="res://woodenpost.tscn" id="10_m48ns"]
+[ext_resource type="PackedScene" uid="uid://dsoquhjyqa6bg" path="res://pizztow.tscn" id="11_awyus"]
+[ext_resource type="PackedScene" uid="uid://d0u4sehll21rt" path="res://spiralstair.tscn" id="12_8hg3d"]
+[ext_resource type="PackedScene" uid="uid://bgdk7po1600bg" path="res://hud.tscn" id="13_myjs0"]
+[ext_resource type="PackedScene" uid="uid://bjoksaw83oowi" path="res://lucky_cat.tscn" id="14_5ump0"]
+
+[sub_resource type="Gradient" id="Gradient_x7ppf"]
+colors = PackedColorArray(0.492685, 0.465299, 0.969001, 1, 0.686275, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_40yr1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sufam"]
+in_3d_space = true
+seamless = true
+color_ramp = SubResource("Gradient_x7ppf")
+noise = SubResource("FastNoiseLite_40yr1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceu56"]
+albedo_texture = SubResource("NoiseTexture2D_sufam")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fgq7l"]
+panorama = ExtResource("3_ia027")
+
+[sub_resource type="Sky" id="Sky_3wjk2"]
+sky_material = SubResource("PanoramaSkyMaterial_fgq7l")
+
+[sub_resource type="Environment" id="Environment_1bwb6"]
+background_mode = 2
+sky = SubResource("Sky_3wjk2")
+tonemap_mode = 1
+ssao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7tqt"]
+albedo_color = Color(0.796078, 1, 1, 1)
+metallic = 0.81
+metallic_specular = 0.2
+roughness = 0.5
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.000850145
+
+[sub_resource type="Animation" id="Animation_5cwy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Area3D/AnimationPlayer/MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.3775, 4, 8.47826)]
+}
+
+[sub_resource type="Animation" id="Animation_d6l6o"]
+resource_name = "dialog_slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Area3D/AnimationPlayer/MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(8.3775, 4.24551, 8.47826), Vector3(8.3775, 3.97093, 8.47826)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bag1a"]
+_data = {
+"RESET": SubResource("Animation_5cwy4"),
+"dialog_slide": SubResource("Animation_d6l6o")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q6h5"]
+albedo_texture = ExtResource("4_jhyb7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7gs5"]
+material = SubResource("StandardMaterial3D_1q6h5")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bqs6s"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="LEVEL" type="Node3D"]
+script = ExtResource("1_f34tk")
+
+[node name="ground" type="CSGBox3D" parent="."]
+transform = Transform3D(4.94658, 0, 0, 0, 4.94658, 0, 0, 0, 4.94658, 10, -0.5, 10)
+use_collision = true
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_ceu56")
+
+[node name="walls" type="CSGTorus3D" parent="."]
+transform = Transform3D(70.4175, 0, 0, 0, 70.4175, 0, 0, 0, 70.4175, 9.76216, 0, 10.5004)
+inner_radius = 0.878402
+outer_radius = 0.999278
+material = ExtResource("2_wq8ii")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bwb6")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.87959, -0.436605, 0.188936, 0, 0.397148, 0.917755, -0.475732, -0.807248, 0.349328, 0, 0, 0)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="WALL" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2339, 4.97329, -22.2343)
+use_collision = true
+size = Vector3(53.0635, 8, 1)
+material = SubResource("StandardMaterial3D_o7tqt")
+
+[node name="WALL2" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39.0738, 4.97329, 3.93461)
+use_collision = true
+size = Vector3(53.0635, 8, 1)
+material = SubResource("StandardMaterial3D_o7tqt")
+
+[node name="WALL3" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.7402, 4.97329, 3.93461)
+use_collision = true
+size = Vector3(53.0635, 8, 1)
+material = SubResource("StandardMaterial3D_o7tqt")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_bag1a")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D/AnimationPlayer"]
+transform = Transform3D(-1.14, 1.57361e-07, 6.87846e-15, 1.14265e-21, -2.62268e-08, 0.6, 2.98986e-07, 0.6, 2.62268e-08, 9.3775, 4, 9.47826)
+mesh = SubResource("PlaneMesh_v7gs5")
+skeleton = NodePath("../boxes")
+
+[node name="Label3D" type="Label3D" parent="Area3D/AnimationPlayer/MeshInstance3D2"]
+transform = Transform3D(-0.697377, -3.69519e-15, 1.44694e-07, 5.19586e-08, -6.91059e-08, 1.38371, 3.30351e-15, 1.58096, 6.04838e-08, -0.921526, 0.0500259, 0.368417)
+text = "i lost my cat 
+could you find them?
+they were around here last
+time"
+font = ExtResource("5_cggf8")
+font_size = 24
+horizontal_alignment = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8.39356, 4.26993, 8.36986)
+shape = SubResource("ConcavePolygonShape3D_bqs6s")
+
+[node name="well" parent="." instance=ExtResource("6_pjsjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7526, 2.50298, -14.5719)
+
+[node name="trunks" parent="." instance=ExtResource("7_saidm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.56162, 1.70232, 16.5279)
+
+[node name="trunks2" parent="." instance=ExtResource("7_saidm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.854, 1.72281, -16.3309)
+
+[node name="Plane" parent="trunks2" index="0"]
+transform = Transform3D(5.40614, 0, 2.67388, 0, 6.03125, 0, -2.67388, 0, 5.40614, 0, -1.81447, 0)
+
+[node name="CollisionShape3D" parent="trunks2" index="1"]
+transform = Transform3D(5.40614, 0, 2.67388, 0, 6.03125, 0, -2.67388, 0, 5.40614, 0, -1.81447, 0)
+
+[node name="trunks3" parent="." instance=ExtResource("7_saidm")]
+transform = Transform3D(-0.658387, 0, 0.752679, 0, 1, 0, -0.752679, 0, -0.658387, 30.5279, 1.72281, -9.88087)
+
+[node name="Plane" parent="trunks3" index="0"]
+transform = Transform3D(5.40614, 0, 2.67388, 0, 6.03125, 0, -2.67388, 0, 5.40614, 0, -1.81447, 0)
+
+[node name="CollisionShape3D" parent="trunks3" index="1"]
+transform = Transform3D(5.40614, 0, 2.67388, 0, 6.03125, 0, -2.67388, 0, 5.40614, 0, -1.81447, 0)
+
+[node name="lamps" type="Node3D" parent="."]
+
+[node name="lamppost" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3, 29)
+
+[node name="lamppost2" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 10, 3, 29)
+
+[node name="lamppost3" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 10, 3, 37)
+
+[node name="lamppost4" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3, 37)
+
+[node name="lamppost5" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3, 44)
+
+[node name="lamppost6" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 21, 3, 36)
+
+[node name="lamppost7" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 10, 3, 51)
+
+[node name="lamppost9" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 20, 3, 51)
+
+[node name="lamppost10" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 29, 3, 51)
+
+[node name="lamppost11" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 29, 3, 40)
+
+[node name="lamppost12" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 37, 3, 41)
+
+[node name="lamppost13" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 37, 3, 49)
+
+[node name="lamppost8" parent="lamps" instance=ExtResource("8_eem14")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1, 3, 51)
+
+[node name="mini houses" type="Node3D" parent="."]
+
+[node name="minihouse" parent="mini houses" instance=ExtResource("9_oq4ta")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -42, 4, 22)
+
+[node name="minihouse2" parent="mini houses" instance=ExtResource("9_oq4ta")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -44, 4, 5)
+
+[node name="minihouse3" parent="mini houses" instance=ExtResource("9_oq4ta")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -38, 4, -12)
+
+[node name="minihouse4" parent="mini houses" instance=ExtResource("9_oq4ta")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -30, 4, -29)
+
+[node name="wooden posts" type="Node3D" parent="."]
+
+[node name="woodenpost" parent="wooden posts" instance=ExtResource("10_m48ns")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 4, 0)
+
+[node name="woodenpost2" parent="wooden posts" instance=ExtResource("10_m48ns")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 41, 4, 34)
+
+[node name="tower thing" parent="." instance=ExtResource("11_awyus")]
+transform = Transform3D(0.91257, 0, 0.40892, 0, 1, 0, -0.40892, 0, 0.91257, 53.9882, 0, 0)
+
+[node name="spiral staircase" parent="tower thing" instance=ExtResource("12_8hg3d")]
+transform = Transform3D(0.598325, 0, -4.47035e-08, 0, 0.598325, 0, 4.47035e-08, 0, 0.598325, -0.523499, 3.17067, -8.25225)
+
+[node name="HUD" parent="." instance=ExtResource("13_myjs0")]
+
+[node name="lucky cat" parent="." instance=ExtResource("14_5ump0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 9)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+
+[editable path="trunks"]
+[editable path="trunks2"]
+[editable path="trunks3"]
